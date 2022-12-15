@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: vpromc
   labels:
-    name: vpromc
+    app: vpromc
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: vpromc
-  replicas: 1
   template:
     metadata:
       labels:
-        name: vpromc
+        app: vpromc
     spec:
       containers:
         - image: memcached
